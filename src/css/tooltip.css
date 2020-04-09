@@ -1,0 +1,83 @@
+circle.tooltip{
+    position: relative;
+    display: inline;
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+}
+
+circle.tooltip .tooltiptext{
+    /* visibility: hidden; */
+    display: block;
+    /* display: -webkit-flex; */
+    /* justify-content: center; */
+    /* -webkit-justify-content:center; */
+    /* width: 120px; */
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    display: inline;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    /* margin-left: -60px; */
+
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+circle.tooltip .tooltiptext::after{
+    content: "";
+    position: absolute;
+    
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+circle.tooltip:hover text.tooltiptext{
+    visibility: visible ;
+    opacity: 1 ;
+}
+
+.tooltip:hover {
+    fill: red;
+}
+
+/* .tooltip:hover .tooltiptext{
+    visibility: visible;
+    opacity: 1;
+} */
+
+foreignObject{
+    width: 100%;
+    
+}
+
+/* foreignObject .embedContent{
+        border-radius: 10px;
+        border: solid 2px #000;
+} */
+
+svg div{
+    text-align: center;
+    line-height: 150px;
+}
+
+.tooltipBack{
+    /* visibility: none; */
+    fill:gray;
+    opacity:0;
+    /* opacity: 0; */
+}
+
+.tooltipText{
+    visibility: none;
+    opacity: 0;
+}
