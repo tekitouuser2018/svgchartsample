@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="./src/css/tooltip.css">
+        <link rel="stylesheet" href="./src/css/chart1.css">
     </head>
     <body>
         <svg height="250" width="550" xmlns="http://www.w3.org/2000/svg">
@@ -32,13 +33,61 @@
             <text x="412" y="85" class="tooltipText">Tooltip Text</text>
             <!-- STAR -->
             <polygon points="99,173 94,186 109,177 91,177 106,186" fill="orange" stroke="skyblue"/>
-            <path d="M300 175 
+            <path id="starLine" d="M300 175 
             L 305 165 L 310 175
             L 321.5 175 L 312.5 182.5 
             L 315 195 L 305 185
             L 295 195 L 297.5 182.5
             L 288.5 175" 
             stroke="skyblue" fill="orange"/>
+            <!-- LINE ON STAR -->
+            <path class="moveLine" d="M0 0 L0 -4" 
+            stroke-width="1" stroke="lime">
+            <animateMotion dur="3s" repeatCount="indefinite">
+                <mpath xlink:href="#starLine"></mpath>
+            </animateMotion>
+            <animate id="animation1"
+                attributeName="opacity"
+                from="0" to="1" dur="1s"
+                begin="0s;animation2.end" />
+            <animate id="animation2"
+                attributeName="opacity"
+                from="1" to="0" dur="1s" 
+                begin="animation1.end" />
+            </path>
+            <path class="moveLine" d="M-3 2 L3 -2" 
+            stroke-width="1" stroke="lime">
+            <animateMotion dur="3s" repeatCount="indefinite">
+                <mpath xlink:href="#starLine"></mpath>
+            </animateMotion>
+            <animate id="animation1"
+                attributeName="opacity"
+                from="0" to="1" dur="1s"
+                begin="0s;animation2.end" />
+            <animate id="animation2"
+                attributeName="opacity"
+                from="1" to="0" dur="1s" 
+                begin="animation1.end" />
+            </path>
+            <path class="moveLine" d="M3 2 L-3 -2" 
+            stroke-width="1" stroke="lime">
+            <animateMotion dur="3s" repeatCount="indefinite">
+                <mpath xlink:href="#starLine"></mpath>
+            </animateMotion>
+            <animate id="animation1"
+                attributeName="opacity"
+                from="0" to="1" dur="1s"
+                begin="0s;animation2.end" />
+            <animate id="animation2"
+                attributeName="opacity"
+                from="1" to="0" dur="1s" 
+                begin="animation1.end" />
+            </path>
+            <!-- <circle id="move_circle" cx="0" cy="0" r="5" fill="red">
+                <animateMotion dur="3s" repeatCount="indefinite">
+                    <mpath xlink:href="#starLine"></mpath>
+                  </animateMotion>
+            </circle> -->
             <!-- HEART -->
             <rect x="55" y="175" width="10" height="10" 
             transform="rotate(-45,55,185)" fill="red"></rect>
@@ -58,11 +107,12 @@
             <circle cx="83" cy="103" r="7" fill="gray"/>
             <circle cx="95" cy="102" r="8" fill="gray"/>
             <circle cx="110" cy="100" r="10" fill="gray"/>
-            <path d="M200 175 
+            <path id="cloudLine" d="M200 175 
             A 5 5 0 0 1 205 167
             A 4 4 0 0 1 212 167  
             A 5 5 0 0 1 220 175" 
-            stroke="skyblue" fill="gray"/>
+            stroke="skyblue" stroke-width="2" fill="gray"/>
+            
         </svg>
     <script src="./src/js/tooltip.js" type="text/javascript"></script>
     </body>

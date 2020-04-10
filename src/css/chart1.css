@@ -1,0 +1,10 @@
+#cloudLine {
+    stroke-dasharray:30;
+    animation: dash 8s infinite;
+}
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 100;
+    }
+  }
